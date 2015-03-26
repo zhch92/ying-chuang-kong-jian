@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>众创空间关于我们</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+	#allmap {height: 356px;width:100%;overflow: hidden;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nXHOfl5S0qYDBDkBbvixtKvg"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="head">
+            <div class="logo"><a href="#"><img src="images/logo.jpg" alt=""></a>
+            </div>
+            <div class="nav clearfix">
+                <ul>
+                    <li><a class="selected" href="index_1.html">众创空间</a></li>
+                    <li class="active"><a href="about_us.html">关于我们</a></li>
+                    <li><a href="item_show.html">创业项目</a></li>
+                    <li><a href="#">天使基金</a></li>
+                    <li><a href="investor.html">投资人</a></li>
+                    <li><a href="activity.html">会议活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about_us">
+        <h3 class="title_2">盈创动力众创空间</h3>
+        <p class="text">众创空间是顺应网络时代创新创业特点和需求，通过市场化机制、专业化服务和资本化途径构建的低成本、便利化、全要素、开放式的新型创业服务平台的统称。发展众创空间要充分发挥社会力量作用，有效利用国家自主创新示范区、国家高新区、科技企业孵化器、高校和科研院所的有利条件，着力发挥政策集成效应，实现创新与创业相结合、线上与线下相结合、孵化与投资相结合，为创业者提供良好的工作空间、网络空间、社交空间和资源共享空间。</p>
+        <div class="table clearfix">
+        <div class="lside"> <img src="images/us_1.jpg " alt=""></div>
+        <div class="rside"> 
+        <ul>
+            <li><img src="images/us_2.jpg" alt=""></li>
+            <li><img src="images/us_3.jpg" alt=""></li>
+            <li><img src="images/us_4.jpg" alt=""></li>
+            <li><img src="images/us_5.jpg" alt=""></li>
+        </ul></div>
+        </div>
+        <h3 class="title_1">我们的服务理念：关注、高效、简单</h3>
+        <ul>
+            <li><strong>关注</strong>关注用户体验，提供心服务提供心服务提供心服务！</li>
+            <li><strong>关注</strong>关注用户体验，提供心服务提供心服务提供心服务！</li>
+            <li><strong>关注</strong>关注用户体验，提供心服务提供心服务提供心服务！</li>
+            <li><strong>关注</strong>关注用户体验，提供心服务提供心服务提供心服务！</li>
+        </ul>
+        <h3 class="title_2">我的位置</h3>
+        <div class="map">
+			<div id="allmap"></div>
+            <!--<img src="images/map.jpg" alt="">-->
+        </div>
+        <h3 class="title_1">联系我们</h3>
+
+        <div class="us">
+            <p class="phone">：028-83159999 </p>
+            <p class="email">：winpower@winpow.com</p>
+            <p class="position">：成都高新区锦城大道539号盈创动力大楼A座5楼 610041</p>
+            <div class="code_1">
+                <img src="images/code_1.jpg" alt=""><br>
+                (关注众创空间官方微博)
+            </div>
+            <div class="code_2">
+                <img src="images/code.jpg" alt=""><br>
+                (关注众创空间微信公众号)
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="links">友情链接：
+            <span><a href="#">成都高新区</a></span> /
+            <span><a href="#">成都高投</a></span> /
+            <span><a href="#">天府软件园</a></span> /
+            <span><a href="#">天府人才行动</a></span> /
+            <span><a href="#">游戏茶馆</a></span> /
+            <span><a href="#">公共技术平台</a></span> /
+        </p>
+        <p class="copyright">
+            Copyright © <a href="#">2010 众创空间.</a> All Rights Reserved. 蜀ICP备11001370号-4 站长统计 Designed by StrongDigital
+        </p>
+    </div>
+	<script type="text/javascript">
+		// 百度地图API功能
+    var map = new BMap.Map('allmap');
+    var poi = new BMap.Point(104.06847,30.581166);
+    map.centerAndZoom(poi, 19);
+    map.enableScrollWheelZoom();
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+                    '<img src="../img/baidu.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+                    '地址：锦城大道539号盈创动力<br/>简介：成都高投盈创动力投资发展有限公司系成都高新区管委会下属国有独资公司成都高新投资集团有限公司全资子公司。' +
+                  '</div>';
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+	searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+			title  : "盈创动力",      //标题
+			width  : 290,             //宽度
+			height : 105,              //高度
+			panel  : "panel",         //检索结果面板
+			enableAutoPan : true,     //自动平移
+			searchTypes   :[
+				BMAPLIB_TAB_SEARCH,   //周边检索
+				BMAPLIB_TAB_TO_HERE,  //到这里去
+				BMAPLIB_TAB_FROM_HERE //从这里出发
+			]
+		});
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+	    searchInfoWindow.open(marker);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+	
+	</script>
+</body>
+
+</html>
